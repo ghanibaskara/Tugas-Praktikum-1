@@ -13,6 +13,10 @@ public class Buku {
 
     public Buku(){}
 
+    public String getNamaBuku(){
+        return namabuku;
+    }
+
     public double cekKesamaan(Buku buku){
         int kesamaan = 0;
         if (this.namabuku.equals(buku.namabuku)) {

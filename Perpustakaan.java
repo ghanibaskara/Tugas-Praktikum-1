@@ -155,12 +155,24 @@ public class Perpustakaan {
         Kategori Fiksi = new Kategori("Fiksi",fiksi1,fiksi2,fiksi3,fiksi4,fiksi5,fiksi6);
         Fiksi.TampilkanDaftarBuku();
 
-        Buku teknologi0 = new Buku();
-        teknologi0.copy(fiksi1);
-        teknologi0.TampilkanDetailBuku();
-        System.out.println(teknologi0.HitungJumlahKata());
 
-        System.out.println(teknologi0.cekKesamaan(fiksi1)+ "%");
+        //Ujicoba method copy, jumlah kata, dan kesamaan
+        //Inisialisasi objek bukuBaru tanpa constructor (belum memiliki atribut)
+        System.out.println();
+        System.out.println();
+        Buku bukuBaru = new Buku();
+        //Inisialisasi objek bukuLama dengan constructor yang telah diisi
+        Buku bukuLama = new Buku( "The Great Gatsby","Berlatar di era Roaring Twenties di Amerika Serikat, novel ini menceritakan kisah Jay Gatsby, seorang pria kaya yang penuh misteri, dan obsesinya terhadap Daisy Buchanan, cinta lamanya. Melalui sudut pandang Nick Carraway, novel ini mengeksplorasi tema kesenjangan sosial, impian Amerika, dan kehampaan hidup kelas atas.",1925, scott);
+
+        bukuBaru.copy(bukuLama);
+        bukuBaru.TampilkanDetailBuku();
+        System.out.println();
+        
+        //Uji coba method hitung jumlah kata pada sinopsis
+        System.out.println("Buku tersebut memiliki jumlah kata pada sinopsis sebanyak : " + bukuBaru.HitungJumlahKata() + " kata\n");
+
+        //Uji coba cek kesamaan antar buku
+        System.out.println("Buku " + bukuBaru.getNamaBuku() + " memiliki persaman dengan buku " + bukuLama.getNamaBuku() + " sebesar : " + bukuBaru.cekKesamaan(bukuLama)+ "%");
 
        
     }
@@ -168,4 +180,6 @@ public class Perpustakaan {
         
 
 }
+
+
 
